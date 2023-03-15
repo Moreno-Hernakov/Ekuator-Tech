@@ -58,10 +58,10 @@ class TransactionController extends Controller
         ], 200);
     }
 
-    public function getDetail(Request $request)
+    public function getDetail($id)
     {
         return response()->json([
-            'transactions' => Transaction::where('id', $request->id)->get()
+            'transactions' => Transaction::where('id', $id)->get()
         ], 200);
     }
 }

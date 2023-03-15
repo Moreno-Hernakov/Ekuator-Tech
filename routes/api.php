@@ -28,13 +28,13 @@ Route::group(['middleware' => 'auth:sanctum'], function () {
             Route::delete('/delete/{id}', [ProductController::class, 'delete']);
         });
         Route::get('/list', [ProductController::class, 'getList']);
-        Route::get('/detail', [ProductController::class, 'getDetail']);
+        Route::get('/detail/{id}', [ProductController::class, 'getDetail']);
     });
 
     Route::prefix('transaction')->group(function () {
         Route::post('/create', [TransactionController::class, 'create'])->middleware(['isadmin']);
         Route::get('/list', [TransactionController::class, 'getList']);
-        Route::get('/detail', [TransactionController::class, 'getDetail']);
+        Route::get('/detail/{id}', [TransactionController::class, 'getDetail']);
     });
 
 

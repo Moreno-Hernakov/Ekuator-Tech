@@ -93,10 +93,10 @@ class ProductController extends Controller
         ], 200);
     }
 
-    public function getDetail(Request $request)
+    public function getDetail($id)
     {
         return response()->json([
-            'product' => Product::where('id', $request->id)->where('is_active', 1)->get()
+            'product' => Product::where('id', $id)->where('is_active', 1)->first()
         ], 200);
     }
 
